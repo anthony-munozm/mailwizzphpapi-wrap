@@ -49,14 +49,9 @@ $app->group('/lists', function() use ($app) {
 
         $post = $app->request->post();
 
-        if(!$post['list'])
-        {
-            echo json_encode(array('status' => 'error', 'result' => 'Parameter [list] is missing'));
-            $app->stop();
-        }
         if(!isset($post['general_name']))
         {
-            $post['general_name'] = 'Custom list created from the API 4';
+            $post['general_name'] = 'Custom list created from the API';
         }
         if(!isset($post['general_description']))
         {
