@@ -35,9 +35,15 @@ class APIAuthMiddleware extends \Slim\Middleware
 
         $this->_publicKey = $request->headers->get('public-key');
         $this->_privateKey = $request->headers->get('private-key');
+        $this->_apiurl = $request->headers->get('api-url');
 
         //echo($publicKey);
         //echo($privateKey);
+
+        if (!$this->_apiurl) {
+            echo json_encode(array('status' => 'error', 'result' => 'Please provide api url'));
+            return;
+        }
 
         if (!$this->_publicKey) {
             echo json_encode(array('status' => 'error', 'result' => 'Please provide public app key'));
@@ -51,7 +57,7 @@ class APIAuthMiddleware extends \Slim\Middleware
         }
         
         $config = new MailWizzApi_Config(array(
-            'apiUrl' => 'http://mailer46.en-vi-ar.com/api',
+            'apiUrl' => $this->_apiurl,
             'publicKey' => $this->_publicKey, 
             'privateKey' => $this->_privateKey,
 
