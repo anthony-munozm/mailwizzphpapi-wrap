@@ -51,7 +51,7 @@ class APIAuthMiddleware extends \Slim\Middleware
         }
         
         $config = new MailWizzApi_Config(array(
-            'apiUrl' => 'https://localhost/api/index.php',
+            'apiUrl' => 'http://mailer46.en-vi-ar.com/api',
             'publicKey' => $this->_publicKey, 
             'privateKey' => $this->_privateKey,
 

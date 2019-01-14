@@ -7,7 +7,7 @@ $app->group('/subscribers', function() use ($app){
         $endpoint = new MailWizzApi_Endpoint_ListSubscribers();
 
         $post = $app->request->post();
-
+        
         if(!$post['email'] || !$post['list'] )
         {
             echo json_encode(array('status' => 'error', 'result' => 'Some parameters are missing'));
@@ -24,40 +24,61 @@ $app->group('/subscribers', function() use ($app){
             $post['lname'] = '';
         }
 
-        if(!isset($post['joindate']))
+        if(!isset($post['address']))
         {
-            $post['joindate'] = '';
+            $post['address'] = '';
         }
 
-        if(!isset($post['facebook']))
+        if(!isset($post['city']))
         {
-            $post['facebook'] = '';
+            $post['city'] = '';
         }
 
-        if(!isset($post['gender']))
+        if(!isset($post['DSID']))
         {
-            $post['gender'] = '';
+            $post['DSID'] = '';
         }
 
-        if(!isset($post['fullname']))
+
+        if(!isset($post['phone1']))
         {
-            $post['fullname'] = '';
+            $post['phone1'] = '';
         }
 
-        if(!isset($post['birthday']))
+
+        if(!isset($post['phone2']))
         {
-            $post['birthday'] = '';
+            $post['phone2'] = '';
+        }
+
+        if(!isset($post['state']))
+        {
+            $post['state'] = '';
+        }
+
+
+        if(!isset($post['zip']))
+        {
+            $post['zip'] = '';
+        }
+
+        if(!isset($post['ip']))
+        {
+            $post['ip'] = '';
         }
 
         $response = $endpoint->createUpdate($post['list'], array(
             'EMAIL'    => $post['email'],
             'FNAME'    => $post['fname'],
             'LNAME'    => $post['lname'],
-            'joindate'    => $post['joindate'],
-            'facebook'    => $post['facebook'],
-            'gender'    => $post['gender'],
-            'fullname'    => $post['fullname'],
-            'birthday'    => $post['birthday'],
+            'ADDRESS'    => $post['address'],
+            'CITY'    => $post['city'],
+            'DSID'    => $post['dsid'],
+            'PHONE1'    => $post['phone1'],
+            'PHONE2'    => $post['phone2'],
+            'STATE'    => $post['state'],
+            'ZIP'    => $post['zip'],
+            'IP'    => $post['ip']
         ));
         echo MailWizzApi_Json::encode($response->body);
     });
