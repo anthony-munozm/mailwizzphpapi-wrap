@@ -57,6 +57,10 @@ $app->group('/lists', function() use ($app) {
         {
             $post['general_description'] = 'This is a Subscribers list, created from the API.';
         }
+        if(!isset($post['general_opt_in']))
+        {
+            $post['general_opt_in'] = 'single';
+        }
         if(!isset($post['defaults_from_name']))
         {
             $post['defaults_from_name'] = 'John Doe';
@@ -127,7 +131,7 @@ $app->group('/lists', function() use ($app) {
             'general' => array(
                 'name'          => $post['general_name'], // required
                 'description'   => $post['general_description'], // required
-                'opt_in' => 'single',
+                'opt_in' => $post['general_opt_in'],
             ),
             // required
             'defaults' => array(
