@@ -51,11 +51,11 @@ $app->group('/lists', function() use ($app) {
 
         if(!isset($post['general_name']))
         {
-            $post['general_name'] = 'Custom list created from the API';
+            $post['general_name'] = 'Subscribers';
         }
         if(!isset($post['general_description']))
         {
-            $post['general_description'] = 'This is a test list, created from the API.';
+            $post['general_description'] = 'This is a Subscribers list, created from the API.';
         }
         if(!isset($post['defaults_from_name']))
         {
@@ -71,7 +71,7 @@ $app->group('/lists', function() use ($app) {
         }
         if(!isset($post['defaults_subject']))
         {
-            $post['defaults_subject'] = 'Hello!';
+            $post['defaults_subject'] = 'Subscribers';
         }
         if(!isset($post['notifications_subscribe']))
         {
