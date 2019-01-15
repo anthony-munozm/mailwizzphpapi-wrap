@@ -127,6 +127,7 @@ $app->group('/lists', function() use ($app) {
             'general' => array(
                 'name'          => $post['general_name'], // required
                 'description'   => $post['general_description'], // required
+                'opt_in' => 'single',
             ),
             // required
             'defaults' => array(
