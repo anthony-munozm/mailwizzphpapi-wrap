@@ -1,4 +1,7 @@
 # mailwizzphpapi-wrap
+
+NEW UPDATED VERSION by Anthony Munoz
+
 This project is a little web/rest application using Slim Framework 2, acting like a proxy between MailWizz api and whatever other application that calls it.
 # How to use
 
