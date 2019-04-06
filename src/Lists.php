@@ -132,6 +132,8 @@ $app->group('/lists', function() use ($app) {
                 'name'          => $post['general_name'], // required
                 'description'   => $post['general_description'], // required
                 'opt_in' => $post['general_opt_in'],
+                'country'          => $post['general_name'], // required
+
             ),
             // required
             'defaults' => array(
@@ -163,7 +165,6 @@ $app->group('/lists', function() use ($app) {
             ),
         ));
         // and get the response
-        print_r($response->body);
         echo MailWizzApi_Json::encode($response->body);
     });
 
