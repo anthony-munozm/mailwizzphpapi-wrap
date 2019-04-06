@@ -134,9 +134,9 @@ def get_lists_show_api():
     
     if request.method == 'GET':
 
-        PUBLIC_KEY = request.args.get("public_key", None)
-        PRIVATE_KEY = request.args.get("private_key", None)
-        API_URL = request.args.get("api_url", None)
+        PUBLIC_KEY = request.args.get("public-key", None)
+        PRIVATE_KEY = request.args.get("private-key", None)
+        API_URL = request.args.get("api-url", None)
         payload = str(request.__dict__["environ"]["QUERY_STRING"])
 
         result = get_lists_show(INTERNAL_SERVER, PUBLIC_KEY, PRIVATE_KEY, API_URL, payload)
@@ -171,9 +171,9 @@ def get_lists_create_api():
     
     if request.method == 'GET':
 
-        PUBLIC_KEY = request.args.get("public_key", None)
-        PRIVATE_KEY = request.args.get("private_key", None)
-        API_URL = request.args.get("api_url", None)
+        PUBLIC_KEY = request.args.get("public-key", None)
+        PRIVATE_KEY = request.args.get("private-key", None)
+        API_URL = request.args.get("api-url", None)
         payload = str(request.__dict__["environ"]["QUERY_STRING"])
 
         result = get_lists_create(INTERNAL_SERVER, PUBLIC_KEY, PRIVATE_KEY, API_URL, payload)
@@ -206,9 +206,9 @@ def get_subscribers_user_add_api():
     
     if request.method == 'GET':
 
-        PUBLIC_KEY = request.args.get("public_key", None)
-        PRIVATE_KEY = request.args.get("private_key", None)
-        API_URL = request.args.get("api_url", None)
+        PUBLIC_KEY = request.args.get("public-key", None)
+        PRIVATE_KEY = request.args.get("private-key", None)
+        API_URL = request.args.get("api-url", None)
         payload = str(request.__dict__["environ"]["QUERY_STRING"])
 
         result = get_subscribers_user_add(INTERNAL_SERVER, PUBLIC_KEY, PRIVATE_KEY, API_URL, payload)
@@ -241,21 +241,6 @@ def get_subscribers_user_add_api():
 
 if __name__ == '__main__':
     app.run()
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
 
 
 
