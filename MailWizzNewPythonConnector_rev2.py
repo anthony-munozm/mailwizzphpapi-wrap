@@ -298,7 +298,7 @@ def get_subscribers_user_add_api():
 
         result = get_subscribers_user_add(INTERNAL_SERVER, PUBLIC_KEY, PRIVATE_KEY, API_URL, payload)
 
-        return jsonify(result)    
+        return str(result)    
     
     else:
         
@@ -319,7 +319,7 @@ def get_subscribers_user_add_api():
 
         result = get_subscribers_user_add(INTERNAL_SERVER, PUBLIC_KEY, PRIVATE_KEY, API_URL, payload=params_string)
 
-        return jsonify(result)    
+        return str(result)    
     
     
 @app.route("/subscribers/user/delete", methods=['GET', 'POST'])
