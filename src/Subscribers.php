@@ -34,12 +34,6 @@ $app->group('/subscribers', function() use ($app){
             $post['city'] = '';
         }
 
-        if(!isset($post['DSID']))
-        {
-            $post['DSID'] = '';
-        }
-
-
         if(!isset($post['phone1']))
         {
             $post['phone1'] = '';
