@@ -82,6 +82,16 @@ $app->group('/subscribers', function() use ($app){
         ));
         echo MailWizzApi_Json::encode($response->body);
     });
-    
+
+    $app->post('/all', function() use ($app) {
+
+        $endpoint = new MailWizzApi_Endpoint_ListSubscribers();
+        
+        $post = $app->request->post();
+
+        $response = $endpoint->getSubscribers($post['list'], $page = 1, $perPage = 10);
+
+        echo MailWizzApi_Json::encode($response->body);
+    });
 
 });
