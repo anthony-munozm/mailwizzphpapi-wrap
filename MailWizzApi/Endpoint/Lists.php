@@ -59,8 +59,6 @@ class MailWizzApi_Endpoint_Lists extends MailWizzApi_Base
             'enableCache'   => true,
         ));
         
-        echo $client;
-
         return $response = $client->request();
     }
     
