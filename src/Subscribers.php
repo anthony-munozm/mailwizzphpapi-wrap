@@ -94,4 +94,15 @@ $app->group('/subscribers', function() use ($app){
         echo MailWizzApi_Json::encode($response->body);
     });
 
+    $app->post('/user/delete', function() use ($app) {
+
+        $endpoint = new MailWizzApi_Endpoint_ListSubscribers();
+        
+        $post = $app->request->post();
+
+        $response = $endpoint->delete($post['list'], $post['subscriber_uid']);
+
+        echo MailWizzApi_Json::encode($response->body);
+    });
+
 });
