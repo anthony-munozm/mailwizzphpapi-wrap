@@ -33,7 +33,7 @@ def get_subscribers_user_add(INTERNAL_SERVER, PUBLIC_KEY, PRIVATE_KEY, API_URL, 
 
     response = requests.request("POST", url, data=payload, headers=headers)
     
-    json_data = response.text
+    json_data = json.loads(response.text)
     
     return json_data
 
