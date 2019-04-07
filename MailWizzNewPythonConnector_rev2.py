@@ -430,7 +430,7 @@ def get_subscribers_clean_list_api():
 
 
 if __name__ == '__main__':
-    app.run(host"0.0.0.0", port=80)
+    app.run(host="0.0.0.0", port=80)
 
 
 # In[ ]:
