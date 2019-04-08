@@ -55,7 +55,7 @@ $app->group('/lists', function() use ($app) {
         }
         if(!isset($post['general_description']))
         {
-            $post['general_description'] = 'This is a Subscribers list, created from the API.';
+            $post['general_description'] = 'Subscribers';
         }
         if(!isset($post['general_opt_in']))
         {
